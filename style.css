@@ -80,12 +80,45 @@ body {
 }
 
 /*ponteiros*/
+.container::after{
+    content: '';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    background-color: rgb(6, 112, 77);
+    transform: translate(-50%, -50%);
+}
+
 .container .pont {
     --rotation: 0;
     position: absolute;
     bottom: 50%;
     left: 50%;
-    width: 10px;
+    background-color: rgb(6, 112, 77);
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+    transform-origin: bottom;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.container .pont.seconds {
     height: 40%;
+    width: 3px;
+    background-color: rgb(27, 59, 49);
+}
+
+.container .pont.minutes {
+    width: 7px;
+    height: 35%;
+    background-color: rgb(6, 112, 77);
+}
+
+.container .pont.hours {
+    width: 10px;
+    height: 25%;
     background-color: rgb(6, 112, 77);
 }
